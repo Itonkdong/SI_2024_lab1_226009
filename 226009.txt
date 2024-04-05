@@ -1,0 +1,107 @@
+1.	Инсталирав
+
+2.	Го променив
+
+3.	Направив нов приватен remote репозиториум на Github именуван SI_2024_lab1_226009
+
+4.	Го отворам Git bash во домашниот директориумот:
+	•	mkdir SI_2024_lab1_226009 - креираме нов директориум со име SI_2024_lab1_226009
+	•	cd SI_2024_lab1_226009/ - влегуваме во него
+	•	git init - го иницијализираме директориумот како Git repo
+
+5.	git remote add origin https://github.com/Itonkdong/SI_2024_lab1_226009.git - го поврзуваме локалниот репозиториум со remote репозиториумот
+
+6.	Ги извршив следниве команди
+	•	nano README.md – креираме датотека README.md и ја пополнуваме
+	•	git add README.md – ја додаваме README.md датотеката на stage
+	•	git commit -m "Initial commit" – го правиме првиот commit со порака “Initial commit”
+
+7.	Ги додадов потребните .java датотеки во директориумот и ги извршив следните наредби
+	•	git add *.java – додавање на сите .java датотеки на stage
+	•	git commit -m "Add starter code" –правиме commit со порака “Add starter code”
+
+8.	git push -u origin master – Правиме синхронизација на локалните гранки со remote репозиторумот
+
+9.	git branch bug1 – креираме гранка со има bug1
+	git branch bug2 – креираме гранка со има bug2
+
+10.	git checkout bug1 – се префрламе на гранка bug1
+
+11.	Jа поправив грешката, па извршуваме:
+	•	git add SILab1_1.java – ја додаваме датотеката SILab1_1.java на stage
+	•	git commit -m "Fix wrong condition in filterOddLengthStrings" – правиме commit со порака “Fix wrong condition in filterOddLengthStrings”
+
+12.	git checkout bug2 – се префрламе на гранка bug2
+
+13.	Jа поправив грешката, па извршуваме:
+	•	git add SILab1_2.java – ја додаваме датотеката SILab1_2.java на stage
+	•	git commit -m " Fix wrong condition in makeBigStringFrom" – правиме commit со порака “Fix wrong condition in makeBigStringFrom”
+
+14.	git checkout bug1 – се префрламе на гранка bug1
+
+15.	Го додадов повикот до статичката функција filterOddLengthStrings, па извршивме:
+	•	git add SILab1Main.java– ја додаваме датотеката SILab1Main.java на stage
+	•	git commit -m " Call method filterOddLengthStrings in main class " – правиме commit со порака “Call method filterOddLengthStrings in main class”
+
+16.	git checkout bug2 – се префрламе на гранка bug2
+
+17.	Го додадов повикот до статичката функција makeBigStringFrom, па извршивме:
+	•	git add SILab1Main.java– ја додаваме датотеката SILab1Main.java на stage
+	•	git commit -m " Call method makeBigStringFrom in main class " – правиме commit со порака “Call method makeBigStringFrom in main class”
+
+18.	git push origin bug1 – ја синхронизираме гранката bug1 со remote репозиториумот, креирајќи нова remote гранка bug1
+   	git push origin bug2 – ја синхронизираме гранката bug2 со remote репозиториумот, креирајќи нова remote гранка bug2
+   	git push origin master - ја синхронизираме гранката master со remote репозиториумот
+
+19.	git checkout master – се префрламе на master гранката
+
+20.	git merge bug1 – ја спојуваме bug1 гранката со master гранката. При ова спојување не настануваат конфликти, а стратегијата што се употребува е Fast-forward бидејќи на master гранката немаме commit-ти што bug1 гранката ги нема
+
+21.	git push origin bug1 – ја синхронизираме гранката bug1 со remote репозиториумот
+	git push origin bug2 – ја синхронизираме гранката bug2 со remote репозиториумот
+	git push origin master - ја синхронизираме гранката master со remote репозиториумот
+
+22.	git checkout bug2 – се префрламе на bug2 гранката
+
+23.	git rebase master – правиме rebase спрема master гранката. По извршувањето на оваа наредба добиваме порака за грешка бидејќи е настанат конфликт коишто треба да се разреши. Конфликтот е настанат во датотеката SILab1Main.java, 	бидејќи на master гранката имаме commit-ти во коишто правиме промена на истата линија од датотеката SILab1Main.java. Овие конфликти мора да се разрешат да се продолжи rabase-от. Конфликтот ќе го разрешиме така што ќе одлучиме да 	остане само една “верзија” од кодот во линија 16 од датотеката SILab1Main.java. Тука одлучуваме да остане верзијата којашто е направена на гранката bug2, a останатата линија ја бришеме од кодот на SILab1Main.java. По 	разрешувањето на конфликтите повикуваме:
+	git add SILab1Main.java– ја додаваме датотеката SILab1Main.java на stage 
+	git rebase –continue – го продолжуваме rabese-от по што се отвара едитор за ја напишеме новата commit порака (на постоечката додаваме: Fixed rebase conflicts in SILab1Main.java)
+	Грешката што се добива при обидот да се направи git rebase master
+
+Auto-merging SILab1Main.java
+CONFLICT (content): Merge conflict in SILab1Main.java
+error: could not apply d546aa7... Call method makeBigStringFrom in main class
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply d546aa7... Call method makeBigStringFrom in main class
+
+24.	git checkout master – се префрламе на master гранката
+
+25.	git merge bug2 - ја спојуваме bug2 гранката со master гранката. При ова спојување не настануваат конфликти, а стратегијата што се употребува е Fast-forward бидејќи на master гранката немаме commit-ти што bug2 гранката ги нема
+
+26.	git push origin bug1 – ја синхронизираме гранката bug1 со remote репозиториумот
+	git push origin master - ја синхронизираме гранката master со remote
+	При синхронизирањето на гранката bug2 настанува грешка:
+
+To https://github.com/Itonkdong/SI_2024_lab1_226009.git
+ ! [rejected]        bug2 -> bug2 (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Itonkdong/SI_2024_lab1_226009.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+27.	git push –force origin bug2 – ја синхронизираме гранката bug2 со remote репозиториумот со вклучена опција force
+	git push origin bug1 – ја синхронизираме гранката bug1 со remote репозиториумот
+	git push origin master - ја синхронизираме гранката master со remote
+
+28.	Ги креираме датотеките logs.txt и 226009.txt, па повикуваме:
+	•	git add *.txt – додавање на сите .txt датотеки на stage
+	•	git commit -m "Final commit" –правиме commit со порака “Final commit”
+
+29.	git push origin bug1 – ја синхронизираме гранката bug1 со remote репозиториумот
+	git push origin bug2 – ја синхронизираме гранката bug2 со remote репозиториумот
+	git push origin master - ја синхронизираме гранката master со remote репозиториумот
+

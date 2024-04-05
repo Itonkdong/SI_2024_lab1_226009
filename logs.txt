@@ -1,0 +1,37 @@
+commit 0a295d6e6d2a8bf2bcfe4623494f30204321dfe0 (HEAD -> master, origin/master, origin/bug2, bug2)
+Author: Itonkdong <kostadinoskiviktor@yahoo.com>
+Date:   Fri Apr 5 19:45:53 2024 +0200
+
+    Call method makeBigStringFrom in main class
+    (Fixed rebase conflicts in SILab1Main.java)
+
+commit 4b5fea255a7940bd983859eebab62fff27ad234b
+Author: Itonkdong <kostadinoskiviktor@yahoo.com>
+Date:   Fri Apr 5 19:36:42 2024 +0200
+
+    Fix wrong condition in makeBigStringFrom
+
+commit 8a3e4544d58d3c1c6073e3bece1d0a61f1b3effa (origin/bug1, bug1)
+Author: Itonkdong <kostadinoskiviktor@yahoo.com>
+Date:   Fri Apr 5 19:41:10 2024 +0200
+
+    Call method filterOddLengthStrings in main class
+
+commit 9932e8a80dc263a415f7a9f52469bf96688b00d4
+Author: Itonkdong <kostadinoskiviktor@yahoo.com>
+Date:   Fri Apr 5 19:31:34 2024 +0200
+
+    Fix wrong condition in filterOddLengthStrings
+
+commit 921848f5b7212a7f7531621f3dae54b460b0ea8b
+Author: Itonkdong <kostadinoskiviktor@yahoo.com>
+Date:   Fri Apr 5 19:14:28 2024 +0200
+
+    Add starter code
+
+commit 85b01d8f6b4731a49043e4070c9eed86d02ed1cf
+Author: Itonkdong <kostadinoskiviktor@yahoo.com>
+Date:   Fri Apr 5 19:09:20 2024 +0200
+
+    Initial commit
+
